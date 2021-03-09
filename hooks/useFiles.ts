@@ -12,7 +12,7 @@ const useFiles = (
     if (fs) {
       fs.readdir(directory, (_error, contents = []) => setFiles(contents));
     }
-  }, [directory, fs]);
+  }, [directory, fs]); // TODO: Update on directory content change
 
   return files.map(callback);
 };
