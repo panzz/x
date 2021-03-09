@@ -1,22 +1,28 @@
 import dynamic from 'next/dynamic';
+import type { ProcessComponentProps } from 'types/contexts/process';
 
-const Window = dynamic(() => import('components/system/Window'));
+type RenderProcessProps = {
+  Component: React.ComponentType<ProcessComponentProps>;
+  hasWindow: boolean;
+  id: string;
+};
 
-const withWindow = (Component: React.ComponentType) => (
-  <Window>
-    <Component />
+const Window = dynamic(() => import('components/system/Windows/Window'));
+
+const withWindow = (
+  id: string,
+  Component: React.ComponentType<ProcessComponentProps>
+) => (
+  <Window id={id}>
+    <Component id={id} />
   </Window>
 );
 
-type RenderProcessProps = {
-  Component: React.ComponentType;
-  hasWindow: boolean;
-};
-
 const RenderProcess = ({
   Component,
-  hasWindow
+  hasWindow,
+  id
 }: RenderProcessProps): JSX.Element =>
-  hasWindow ? withWindow(Component) : <Component />;
+  hasWindow ? withWindow(id, Component) : <Component id={id} />;
 
 export default RenderProcess;

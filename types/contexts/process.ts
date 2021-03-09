@@ -1,5 +1,9 @@
+export type ProcessComponentProps = {
+  id: string;
+};
+
 export type Process = {
-  Component: React.ComponentType;
+  Component: React.ComponentType<ProcessComponentProps>;
   hasWindow?: boolean;
   icon: string;
   title: string;
@@ -17,4 +21,5 @@ export type ProcessContextState = {
   close: (id: string) => void;
   open: (id: string) => void;
   mapProcesses: ProcessesMap;
+  processes: Processes;
 };

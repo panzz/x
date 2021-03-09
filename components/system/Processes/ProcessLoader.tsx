@@ -9,6 +9,7 @@ const ProcessLoader = (): JSX.Element => (
           key={id}
           Component={Component}
           hasWindow={Boolean(hasWindow)}
+          id={id}
         />
       ))
     }
