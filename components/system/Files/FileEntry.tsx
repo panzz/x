@@ -16,7 +16,7 @@ const FileEntry = ({ name, path }: FileEntryProps): JSX.Element => {
 
   return (
     <StyledFileEntry>
-      <Button onClick={onActivate} onKeyDown={onActivate}>
+      <Button onClick={onActivate}>
         <figure>
           <img src={icon} alt={name} />
           <figcaption>{name}</figcaption>
