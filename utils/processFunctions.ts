@@ -24,7 +24,7 @@ const toggleProcessSetting = (
     ? {
         [processId]: {
           ...process,
-          [setting]: !process[setting] || false
+          [setting]: !process[setting]
         },
         ...otherProcesses
       }

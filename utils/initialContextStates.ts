@@ -10,8 +10,8 @@ export const initialProcessContextState: ProcessContextState = {
   close: () => undefined,
   open: () => undefined,
   mapProcesses: () => [],
-  maximize: () => [],
-  minimize: () => [],
+  maximize: () => undefined,
+  minimize: () => undefined,
   processes: {}
 };
 
