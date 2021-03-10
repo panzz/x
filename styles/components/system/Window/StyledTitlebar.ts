@@ -4,7 +4,7 @@ const StyledTitlebar = styled.header`
   align-items: center;
   background-color: #000;
   display: flex;
-  height: 31px;
+  height: 29px;
   width: 100%;
 
   h1 {
@@ -13,25 +13,25 @@ const StyledTitlebar = styled.header`
     flex: 1 1 0%;
     font-size: 12px;
     font-weight: 100;
-    height: 31px;
+    height: 29px;
     letter-spacing: 0.5px;
 
     figure {
       display: flex;
       flex-flow: row;
       place-items: center;
-    }
 
-    img {
-      height: 16px;
-      margin: 8px;
-      width: 16px;
+      img {
+        height: 16px;
+        margin: 8px;
+        width: 16px;
+      }
     }
   }
 
   nav {
     display: flex;
-    height: 32px;
+    height: 29px;
 
     button {
       color: #fff;
@@ -40,13 +40,21 @@ const StyledTitlebar = styled.header`
       line-height: 0;
       place-content: center;
       place-items: center;
-      width: 46px;
-    }
+      width: 45px;
 
-    svg {
-      fill: #fff;
-      height: 10px;
-      width: 10px;
+      &:hover {
+        background-color: rgb(26, 26, 26);
+
+        &.close {
+          background-color: rgb(232, 17, 35);
+          transition: background-color 0.3s ease;
+        }
+      }
+
+      svg {
+        fill: #fff;
+        width: 10px;
+      }
     }
   }
 `;
