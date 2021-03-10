@@ -5,6 +5,8 @@ const Button = styled.button.attrs({
 })`
   background-color: transparent;
   font-family: inherit;
+  height: 100%;
+  width: 100%;
 `;
 
 export default Button;
