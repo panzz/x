@@ -1,12 +1,18 @@
 import styled from 'styled-components';
 
-const StyledWindow = styled.section`
+type StyledWindowProps = {
+  maximized: boolean;
+  minimized: boolean;
+};
+
+const StyledWindow = styled.section<StyledWindowProps>`
   background-color: ${({ theme }) => theme.colors.window};
-  height: 200px;
-  left: 40%;
+  display: ${({ minimized }) => (minimized ? 'none' : 'block')};
+  height: ${({ maximized }) => (maximized ? '100%' : '200px')};
+  left: ${({ maximized }) => (maximized ? '0' : '40%')};
   position: absolute;
-  top: 40%;
-  width: 300px;
+  top: ${({ maximized }) => (maximized ? '0' : '40%')};
+  width: ${({ maximized }) => (maximized ? '100%' : '300px')};
   z-index: 2;
 `;
 

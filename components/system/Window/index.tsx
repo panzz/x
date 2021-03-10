@@ -3,22 +3,21 @@ import { ProcessConsumer } from 'contexts/process';
 import StyledWindow from 'styles/components/system/Window/StyledWindow';
 import type { ProcessComponentProps } from 'types/contexts/process';
 
-// TODO: Pass maximized and minimized as StyledWindow props
-
 const Window: React.FC<ProcessComponentProps> = ({ children, id }) => (
   <ProcessConsumer>
     {({
       processes: {
-        [id]: { minimized }
+        [id]: { maximized, minimized }
       }
-    }) =>
-      !minimized && (
-        <StyledWindow>
-          <Titlebar id={id} />
-          {children}
-        </StyledWindow>
-      )
-    }
+    }) => (
+      <StyledWindow
+        maximized={Boolean(maximized)}
+        minimized={Boolean(minimized)}
+      >
+        <Titlebar id={id} />
+        {children}
+      </StyledWindow>
+    )}
   </ProcessConsumer>
 );
 
