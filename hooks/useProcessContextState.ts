@@ -1,15 +1,24 @@
 import { useCallback, useState } from 'react';
-import type {
-  ProcessContextState,
-  Processes,
-  ProcessesMap
-} from 'types/contexts/process';
+import type { Process, Processes } from 'types/contexts/process';
 import {
   closeProcess,
   maximizeProcess,
   minimizeProcess,
   openProcess
 } from 'utils/processFunctions';
+
+type ProcessesMap = (
+  callback: ([id, process]: [string, Process]) => JSX.Element
+) => JSX.Element[];
+
+export type ProcessContextState = {
+  close: (id: string) => void;
+  open: (id: string) => void;
+  mapProcesses: ProcessesMap;
+  maximize: (id: string) => void;
+  minimize: (id: string) => void;
+  processes: Processes;
+};
 
 const useProcessContextState = (): ProcessContextState => {
   const [processes, setProcesses] = useState<Processes>({});
