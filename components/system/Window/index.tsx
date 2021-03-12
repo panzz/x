@@ -26,7 +26,7 @@ const Window: React.FC<ProcessComponentProps> = ({ children, id }) => {
       size={{ height, width }}
       {...rndDefaults}
     >
-      <StyledWindow minimized={Boolean(minimized)} style={{ height, width }}>
+      <StyledWindow minimized={minimized} style={{ height, width }}>
         <Titlebar id={id} />
         {children}
       </StyledWindow>

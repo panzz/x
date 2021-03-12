@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 type StyledWindowProps = {
-  minimized: boolean;
+  minimized: boolean | undefined;
 };
 
 const StyledWindow = styled.section<StyledWindowProps>`
