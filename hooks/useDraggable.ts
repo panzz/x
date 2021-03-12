@@ -14,7 +14,11 @@ type Draggable = Position & {
 
 const defaultWindowPosition: Position = { x: 0, y: 0 };
 
-const useDraggable = (height: string, width: string): Draggable => {
+const useDraggable = (
+  height: string,
+  width: string,
+  maximized = false
+): Draggable => {
   const [{ x, y }, setPosition] = useState<Position>(defaultWindowPosition);
   const updatePosition = useCallback<DraggableEventHandler>(
     (_event, { x: offsetX, y: offsetY }) =>
@@ -32,7 +36,11 @@ const useDraggable = (height: string, width: string): Draggable => {
     [] // eslint-disable-line react-hooks/exhaustive-deps
   );
 
-  return { x, y, updatePosition };
+  return {
+    x: maximized ? 0 : x,
+    y: maximized ? 0 : y,
+    updatePosition
+  };
 };
 
 export default useDraggable;

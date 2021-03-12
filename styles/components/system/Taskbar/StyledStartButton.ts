@@ -2,9 +2,8 @@ import styled from 'styled-components';
 import Button from 'styles/common/Button';
 
 const StyledStartButton = styled(Button)`
-  color: ${({ theme }) => theme.colors.startButton};
   display: flex;
-  font-size: ${({ theme }) => theme.sizes.startButton.iconSize};
+  fill: ${({ theme }) => theme.colors.startButton};
   height: 100%;
   left: 0;
   place-content: center;
@@ -16,7 +15,7 @@ const StyledStartButton = styled(Button)`
     background-color: ${({ theme }) => theme.colors.taskbarHover};
 
     svg {
-      color: ${({ theme }) => theme.colors.highlight};
+      fill: ${({ theme }) => theme.colors.highlight};
     }
   }
 `;

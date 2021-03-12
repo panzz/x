@@ -14,7 +14,7 @@ const Window: React.FC<ProcessComponentProps> = ({ children, id }) => {
     }
   } = useProcesses();
   const { height, width, updateSize } = useResizeable(maximized);
-  const { x, y, updatePosition } = useDraggable(height, width);
+  const { x, y, updatePosition } = useDraggable(height, width, maximized);
 
   return (
     <Rnd
