@@ -11,11 +11,11 @@ type TaskbarEntryProps = {
 
 const TaskbarEntry = ({ icon, id, title }: TaskbarEntryProps): JSX.Element => {
   const { minimize } = useProcesses();
-  const onActivate = useCallback(() => minimize(id), [id, minimize]);
+  const onClick = useCallback(() => minimize(id), [id, minimize]);
 
   return (
     <StyledTaskbarEntry>
-      <Button onClick={onActivate}>
+      <Button onClick={onClick}>
         <figure>
           <img src={icon} alt={title} />
           <figcaption>{title}</figcaption>
