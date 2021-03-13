@@ -45,6 +45,7 @@ const StyledTitlebar = styled.header`
       &:hover {
         background-color: rgb(26, 26, 26);
 
+        /* stylelint-disable-next-line selector-no-qualifying-type */
         &.close {
           background-color: rgb(232, 17, 35);
           transition: background-color 0.3s ease;
