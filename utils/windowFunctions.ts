@@ -1,5 +1,5 @@
 import type { Position } from 'hooks/useDraggable';
-import { stripUnit } from 'polished';
+import { stripUnit } from 'utils/styleFunctions';
 
 // eslint-disable-next-line import/prefer-default-export
 export const centerDesktopPosition = (
@@ -8,10 +8,8 @@ export const centerDesktopPosition = (
   taskbarHeight: string
 ): Position => {
   const desktopHeight =
-    window.innerHeight -
-    Number(stripUnit(height)) -
-    Number(stripUnit(taskbarHeight));
-  const desktopWidth = window.innerWidth - Number(stripUnit(width));
+    window.innerHeight - stripUnit(height) - stripUnit(taskbarHeight);
+  const desktopWidth = window.innerWidth - stripUnit(width);
 
   return {
     x: Math.floor(desktopWidth / 2),
