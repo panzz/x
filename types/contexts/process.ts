@@ -1,5 +1,9 @@
+export type ProcessComponentProps = {
+  id: string;
+};
+
 export type Process = {
-  Component: React.ComponentType;
+  Component: React.ComponentType<ProcessComponentProps>;
   hasWindow?: boolean;
   icon: string;
   maximized?: boolean;
