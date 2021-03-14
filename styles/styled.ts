@@ -7,10 +7,10 @@ declare module 'styled-components' {
     colors: {
       background: string;
       highlight: string;
-      text: string;
       startButton: string;
       taskbar: string;
       taskbarHover: string;
+      text: string;
       window: string;
     };
     formats: {
