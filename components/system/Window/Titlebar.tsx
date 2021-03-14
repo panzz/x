@@ -17,14 +17,14 @@ const Titlebar = ({ id }: TitlebarProps): JSX.Element => (
         [id]: { icon, title }
       }
     }) => (
-      <StyledTitlebar>
+      <StyledTitlebar className="handle">
         <h1>
           <figure>
             <img src={icon} alt={title} />
             <figcaption>{title}</figcaption>
           </figure>
         </h1>
-        <nav>
+        <nav className="cancel">
           <Button title="Minimize" onClick={() => minimize(id)}>
             <MinimizeIcon />
           </Button>
