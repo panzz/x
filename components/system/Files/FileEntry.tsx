@@ -13,11 +13,12 @@ type FileEntryProps = {
 const FileEntry = ({ name, path }: FileEntryProps): JSX.Element => {
   const { icon, pid } = useFileInfo(path);
   const { open } = useProcesses();
-  const onClick = useCallback(() => open(pid), [open, pid]);
+  const openProcess = useCallback(() => open(pid), [open, pid]);
+  const onClick = useDoubleClick(openProcess);
 
   return (
     <StyledFileEntry>
-      <Button onClick={useDoubleClick(onClick)}>
+      <Button onClick={onClick}>
         <figure>
           <img src={icon} alt={name} />
           <figcaption>{name}</figcaption>

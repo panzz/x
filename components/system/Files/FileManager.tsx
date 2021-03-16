@@ -7,16 +7,17 @@ type FileManagerProps = {
   directory: string;
 };
 
-const FileManager = ({ directory }: FileManagerProps): JSX.Element => (
-  <StyledFileManager>
-    {useFiles(directory, (file) => (
-      <FileEntry
-        key={file}
-        name={basename(file, extname(file))}
-        path={resolve(directory, file)}
-      />
-    ))}
-  </StyledFileManager>
-);
+const FileManager = ({ directory }: FileManagerProps): JSX.Element => {
+  const fileEntryCallback = (file: string) => (
+    <FileEntry
+      key={file}
+      name={basename(file, extname(file))}
+      path={resolve(directory, file)}
+    />
+  );
+  const files = useFiles(directory, fileEntryCallback);
+
+  return <StyledFileManager>{files}</StyledFileManager>;
+};
 
 export default FileManager;

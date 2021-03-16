@@ -11,9 +11,10 @@ const Window: React.FC<ProcessComponentProps> = ({ children, id }) => {
       [id]: { maximized, minimized }
     }
   } = useProcesses();
+  const rndProps = useRnd(maximized);
 
   return (
-    <Rnd {...useRnd(maximized)}>
+    <Rnd {...rndProps}>
       <StyledWindow minimized={minimized}>
         <Titlebar id={id} />
         {children}
