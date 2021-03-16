@@ -53,7 +53,8 @@ const rndDefaults = {
       top: '-3px',
       width: '12px'
     }
-  }
+  },
+  style: { zIndex: 1 }
 };
 
 export default rndDefaults;
