@@ -42,6 +42,7 @@
 - Image Viewer
 - Video Viewer
 - Calendar
+- Calculator (Uno Calculator)
 - Blog
 
 ## Bugs
@@ -56,6 +57,7 @@
 - Host Old Personal Websites
 - Game Save Collaboration
 - Build number at bottom right
+- Easter eggs
 
 # Limitations
 
