@@ -1,17 +1,13 @@
 import { useState } from 'react';
-import type { Position } from 'react-rnd';
+import type { Props as RndProps } from 'react-rnd';
 
 export type Size = {
-  width: string;
-  height: string;
+  width: string | number;
+  height: string | number;
 };
 
 type WindowStates = {
-  [key: string]: {
-    maximized: boolean;
-    position: Position;
-    size: Size;
-  };
+  [key: string]: RndProps;
 };
 
 export type SessionContextState = {
