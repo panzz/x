@@ -1,24 +1,19 @@
-import { useSession } from 'contexts/session';
 import type { Size } from 'hooks/useSessionContextState';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import type { DraggableEventHandler } from 'react-draggable';
 import type { Position, Props as RndProps, RndResizeCallback } from 'react-rnd';
 import { useTheme } from 'styled-components';
 import { DEFAULT_WINDOW_POSITION, DEFAULT_WINDOW_SIZE } from 'utils/constants';
 import rndDefaults from 'utils/rndDefaults';
 
-const useRnd = (id: string, maximized = false): RndProps => {
+const useRnd = (
+  initialPosition = DEFAULT_WINDOW_POSITION,
+  initialSize = DEFAULT_WINDOW_SIZE,
+  maximized = false
+): RndProps => {
   const { sizes } = useTheme();
-  const {
-    windowStates: { [id]: windowState },
-    setWindowStates
-  } = useSession();
-  const [{ x, y }, setPosition] = useState<Position>(
-    windowState?.position || DEFAULT_WINDOW_POSITION
-  );
-  const [{ height, width }, setSize] = useState<Size>(
-    windowState?.size || DEFAULT_WINDOW_SIZE
-  );
+  const [{ x, y }, setPosition] = useState<Position>(initialPosition);
+  const [{ height, width }, setSize] = useState<Size>(initialSize);
   const updatePosition = useCallback<DraggableEventHandler>(
     (_event, { x: positionX, y: positionY }) =>
       setPosition({ x: positionX, y: positionY }),
@@ -52,15 +47,6 @@ const useRnd = (id: string, maximized = false): RndProps => {
       width: maximized ? '100%' : width
     }),
     [height, maximized, sizes.taskbar.height, width]
-  );
-
-  useEffect(
-    () => () =>
-      setWindowStates((windowStates) => ({
-        ...windowStates,
-        [id]: { size, position }
-      })),
-    [id, position, setWindowStates, size]
   );
 
   return {

@@ -3,8 +3,10 @@
 ## OS
 
 - Session
+  - Window Positions/Sizes
   - Icon Positions
   - Startup Apps
+  - Maximized
 - Start Menu
 - Windows
   - Animations (Min/Max/Open/Close)

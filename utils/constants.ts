@@ -1,4 +1,4 @@
-import type { Size } from 'hooks/useRnd';
+import type { Size } from 'hooks/useSessionContextState';
 import type { Position } from 'react-rnd';
 
 export const MILLISECONDS_IN_SECOND = 1000;

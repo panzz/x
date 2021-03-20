@@ -8,8 +8,9 @@ export type Size = {
 
 type WindowStates = {
   [key: string]: {
-    size: Size;
+    maximized: boolean;
     position: Position;
+    size: Size;
   };
 };
 
