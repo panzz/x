@@ -11,7 +11,7 @@ const Window: React.FC<ProcessComponentProps> = ({ children, id }) => {
       [id]: { maximized, minimized }
     }
   } = useProcesses();
-  const rndProps = useRnd(maximized);
+  const rndProps = useRnd(id, maximized);
 
   return (
     <Rnd {...rndProps}>

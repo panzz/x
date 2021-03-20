@@ -37,7 +37,7 @@ declare module 'styled-components' {
           };
           maxWidth: string;
         };
-        height: string;
+        height: number;
       };
     };
     wallpaper?: WallpaperEffect;

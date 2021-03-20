@@ -1,20 +1,24 @@
-import { useCallback, useState } from 'react';
+import { useSession } from 'contexts/session';
+import type { Size } from 'hooks/useSessionContextState';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { DraggableEventHandler } from 'react-draggable';
 import type { Position, Props as RndProps, RndResizeCallback } from 'react-rnd';
 import { useTheme } from 'styled-components';
 import { DEFAULT_WINDOW_POSITION, DEFAULT_WINDOW_SIZE } from 'utils/constants';
 import rndDefaults from 'utils/rndDefaults';
-import { stripUnit } from 'utils/stringFunctions';
 
-export type Size = {
-  width: string;
-  height: string;
-};
-
-const useRnd = (maximized = false): RndProps => {
+const useRnd = (id: string, maximized = false): RndProps => {
   const { sizes } = useTheme();
-  const [{ x, y }, setPosition] = useState<Position>(DEFAULT_WINDOW_POSITION);
-  const [{ height, width }, setSize] = useState<Size>(DEFAULT_WINDOW_SIZE);
+  const {
+    windowStates: { [id]: windowState },
+    setWindowStates
+  } = useSession();
+  const [{ x, y }, setPosition] = useState<Position>(
+    windowState?.position || DEFAULT_WINDOW_POSITION
+  );
+  const [{ height, width }, setSize] = useState<Size>(
+    windowState?.size || DEFAULT_WINDOW_SIZE
+  );
   const updatePosition = useCallback<DraggableEventHandler>(
     (_event, { x: positionX, y: positionY }) =>
       setPosition({ x: positionX, y: positionY }),
@@ -33,16 +37,31 @@ const useRnd = (maximized = false): RndProps => {
     },
     []
   );
-  const position = {
-    x: maximized ? 0 : x,
-    y: maximized ? 0 : y
-  };
-  const size = {
-    height: maximized
-      ? `${window.innerHeight - stripUnit(sizes.taskbar.height)}px`
-      : height,
-    width: maximized ? '100%' : width
-  };
+  const position = useMemo(
+    () => ({
+      x: maximized ? 0 : x,
+      y: maximized ? 0 : y
+    }),
+    [maximized, x, y]
+  );
+  const size = useMemo(
+    () => ({
+      height: maximized
+        ? `${window.innerHeight - sizes.taskbar.height}px`
+        : height,
+      width: maximized ? '100%' : width
+    }),
+    [height, maximized, sizes.taskbar.height, width]
+  );
+
+  useEffect(
+    () => () =>
+      setWindowStates((windowStates) => ({
+        ...windowStates,
+        [id]: { size, position }
+      })),
+    [id, position, setWindowStates, size]
+  );
 
   return {
     disableDragging: maximized,

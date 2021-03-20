@@ -3,7 +3,8 @@
 ## OS
 
 - Session
-  - Window & Icon Positions
+  - Icon Positions
+  - Startup Apps
 - Start Menu
 - Windows
   - Animations (Min/Max/Open/Close)
