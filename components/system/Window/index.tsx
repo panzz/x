@@ -15,10 +15,10 @@ const Window: React.FC<ProcessComponentProps> = ({ children, id }) => {
   const {
     height,
     width,
-    updateSize,
     x,
     y,
-    updatePosition
+    updatePosition,
+    updateSize
   } = useDraggableAndResizable(maximized);
 
   return (
