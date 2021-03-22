@@ -1,10 +1,9 @@
 import type { ProcessComponentProps } from 'components/system/Processes/RenderProcess';
 import Titlebar from 'components/system/Window/Titlebar';
 import { useProcesses } from 'contexts/process';
-import useDraggableAndResizable from 'hooks/useDraggableAndResizable';
+import useRnd from 'hooks/useRnd';
 import { Rnd } from 'react-rnd';
 import StyledWindow from 'styles/components/system/Window/StyledWindow';
-import rndDefaults from 'utils/rndDefaults';
 
 const Window: React.FC<ProcessComponentProps> = ({ children, id }) => {
   const {
@@ -12,25 +11,9 @@ const Window: React.FC<ProcessComponentProps> = ({ children, id }) => {
       [id]: { maximized, minimized }
     }
   } = useProcesses();
-  const {
-    height,
-    width,
-    x,
-    y,
-    updatePosition,
-    updateSize
-  } = useDraggableAndResizable(maximized);
 
   return (
-    <Rnd
-      disableDragging={maximized}
-      enableResizing={!maximized}
-      size={{ height, width }}
-      onDragStop={updatePosition}
-      onResize={updateSize}
-      position={{ x, y }}
-      {...rndDefaults}
-    >
+    <Rnd {...useRnd(maximized)}>
       <StyledWindow minimized={minimized}>
         <Titlebar id={id} />
         {children}

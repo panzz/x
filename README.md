@@ -52,7 +52,6 @@
 ## Bugs
 
 - `npm update` isn't updating `package.json`
-- Corner drag handles are too near inside
 
 # Ideas
 
