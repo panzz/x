@@ -4,7 +4,7 @@ import { useTheme } from 'styled-components';
 import { DEFAULT_WINDOW_SIZE } from 'utils/constants';
 import { pxToInt } from 'utils/stringFunctions';
 
-type Size = NonNullable<Props['size']>;
+export type Size = NonNullable<Props['size']>;
 
 type Resizable = [Size, React.Dispatch<Size>];
 
