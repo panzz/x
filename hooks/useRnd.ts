@@ -1,3 +1,4 @@
+import { useSession } from 'contexts/session';
 import useDraggable from 'hooks/useDraggable';
 import useResizable from 'hooks/useResizable';
 import { useCallback } from 'react';
@@ -5,10 +6,13 @@ import type { DraggableEventHandler } from 'react-draggable';
 import type { Props, RndResizeCallback } from 'react-rnd';
 import rndDefaults from 'utils/rndDefaults';
 
-const useRnd = (maximized = false): Props => {
-  // TODO: Get previous position/size from session
-  const [size, setSize] = useResizable(maximized);
-  const [position, setPosition] = useDraggable(maximized);
+const useRnd = (id: string, maximized = false): Props => {
+  const {
+    windowStates: { [id]: windowState }
+  } = useSession();
+  const { position: previousPosition, size: previousSize } = windowState || {};
+  const [position, setPosition] = useDraggable(maximized, previousPosition);
+  const [size, setSize] = useResizable(maximized, previousSize);
   const onDragStop = useCallback<DraggableEventHandler>(
     (_event, { x: positionX, y: positionY }) =>
       setPosition({ x: positionX, y: positionY }),
@@ -27,8 +31,6 @@ const useRnd = (maximized = false): Props => {
     },
     [setPosition, setSize]
   );
-
-  // TODO: Save position/size to session
 
   return {
     disableDragging: maximized,
