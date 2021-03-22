@@ -8,9 +8,9 @@ import rndDefaults from 'utils/rndDefaults';
 
 const useRnd = (id: string, maximized = false): Props => {
   const {
-    windowStates: { [id]: windowState }
+    windowStates: { [id]: windowState = {} }
   } = useSession();
-  const { position: previousPosition, size: previousSize } = windowState || {};
+  const { position: previousPosition, size: previousSize } = windowState;
   const [position, setPosition] = useDraggable(maximized, previousPosition);
   const [size, setSize] = useResizable(maximized, previousSize);
   const onDragStop = useCallback<DraggableEventHandler>(

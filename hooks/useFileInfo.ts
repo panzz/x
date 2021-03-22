@@ -19,10 +19,13 @@ const useFileInfo = (path: string): FileInfo => {
       const extension = extname(path);
 
       if (extension === '.url') {
-        getShortcut(path, fs).then(({ URL, IconFile }) => {
-          setIcon(IconFile);
-          setPid(URL);
-        });
+        getShortcut(path, fs)
+          .then(({ URL, IconFile }) => {
+            setIcon(IconFile);
+            setPid(URL);
+          })
+          // eslint-disable-next-line no-console
+          .catch((error) => console.error('Failed to get shortcut!', error));
       } else if (IMAGE_FILE_EXTENSIONS.includes(extension)) {
         setIcon(path);
         setPid('ImageViewer');
