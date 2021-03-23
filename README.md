@@ -14,7 +14,11 @@
   - Titlebar Text Truncation
   - Task View
   - Focus Behaviours/Index History
+    - Focus on Drag/Click
+    - Focus with Iframes
+  - Minimum Width/Height
   - Maintain Aspect Ratio
+  - App Based Background Color
 - Desktop
   - Icons Drag & Snap to Grid
   - Text Truncation (3 Lines)
