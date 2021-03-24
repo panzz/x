@@ -31,6 +31,14 @@ const sizes = {
     fontSize: '12px',
     width: '76px'
   },
+  fileManager: {
+    columnGap: '1px',
+    gridEntryHeight: '70px',
+    gridEntryWidth: '74px',
+    gridFlowDirection: 'column',
+    padding: '5px 0',
+    rowGap: '28px'
+  },
   startButton: {
     iconSize: '19px',
     width: '36px'
