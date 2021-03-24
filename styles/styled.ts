@@ -6,6 +6,13 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     colors: {
       background: string;
+      fileEntry: {
+        backgroundColor: string;
+        borderColor1: string;
+        borderColor2: string;
+        textColor: string;
+        textShadow: string;
+      };
       highlight: string;
       startButton: string;
       taskbar: string;
@@ -21,6 +28,10 @@ declare module 'styled-components' {
       clock: {
         fontSize: string;
         width: string;
+      };
+      fileEntry: {
+        fontSize: string;
+        iconSize: string;
       };
       fileManager: {
         columnGap: string;

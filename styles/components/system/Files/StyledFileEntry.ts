@@ -2,17 +2,18 @@ import styled from 'styled-components';
 
 const StyledFileEntry = styled.li`
   display: flex;
-  justify-content: center;
   padding: 2px;
 
   &:hover {
-    background-color: hsla(0, 0%, 50%, 25%);
-    border: 2px solid hsla(0, 0%, 50%, 25%);
+    background-color: ${({ theme }) => theme.colors.fileEntry.backgroundColor};
+    border: ${({ theme }) =>
+      `2px solid ${theme.colors.fileEntry.borderColor1}`};
     padding: 0;
     position: relative;
 
     &::before {
-      border: 1px solid hsla(0, 0%, 70%, 55%);
+      border: ${({ theme }) =>
+        `1px solid ${theme.colors.fileEntry.borderColor2}`};
       bottom: -1px;
       content: '';
       left: -1px;
@@ -26,18 +27,14 @@ const StyledFileEntry = styled.li`
     z-index: 1;
 
     figcaption {
-      color: #fff;
-      font-size: 11.5px;
-      text-shadow: 0 0 1px rgba(0, 0, 0, 75%), 0 0 2px rgba(0, 0, 0, 50%),
-        0 0 3px rgba(0, 0, 0, 25%), 0 1px 1px rgba(0, 0, 0, 75%),
-        0 1px 2px rgba(0, 0, 0, 50%), 0 1px 3px rgba(0, 0, 0, 25%),
-        0 2px 1px rgba(0, 0, 0, 75%), 0 2px 2px rgba(0, 0, 0, 50%),
-        0 2px 3px rgba(0, 0, 0, 25%);
+      color: ${({ theme }) => theme.colors.fileEntry.textColor};
+      font-size: ${({ theme }) => theme.sizes.fileEntry.fontSize};
+      text-shadow: ${({ theme }) => theme.colors.fileEntry.textShadow};
     }
 
     img {
-      height: 48px;
-      width: 48px;
+      height: ${({ theme }) => theme.sizes.fileEntry.iconSize};
+      width: ${({ theme }) => theme.sizes.fileEntry.iconSize};
     }
   }
 `;
