@@ -5,15 +5,13 @@ const StyledFileEntry = styled.li`
   padding: 2px;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.fileEntry.backgroundColor};
-    border: ${({ theme }) =>
-      `2px solid ${theme.colors.fileEntry.borderColor1}`};
+    background-color: ${({ theme }) => theme.colors.fileEntry.background};
+    border: ${({ theme }) => `2px solid ${theme.colors.fileEntry.border1}`};
     padding: 0;
     position: relative;
 
     &::before {
-      border: ${({ theme }) =>
-        `1px solid ${theme.colors.fileEntry.borderColor2}`};
+      border: ${({ theme }) => `1px solid ${theme.colors.fileEntry.border2}`};
       bottom: -1px;
       content: '';
       left: -1px;
@@ -27,7 +25,7 @@ const StyledFileEntry = styled.li`
     z-index: 1;
 
     figcaption {
-      color: ${({ theme }) => theme.colors.fileEntry.textColor};
+      color: ${({ theme }) => theme.colors.fileEntry.text};
       font-size: ${({ theme }) => theme.sizes.fileEntry.fontSize};
       text-shadow: ${({ theme }) => theme.colors.fileEntry.textShadow};
     }

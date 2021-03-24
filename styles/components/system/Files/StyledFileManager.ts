@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const StyledFileManager = styled.ol`
   column-gap: ${({ theme }) => theme.sizes.fileManager.columnGap};
   display: grid;
-  grid-auto-flow: ${({ theme }) => theme.sizes.fileManager.gridFlowDirection};
+  grid-auto-flow: column;
   grid-template-columns: ${({ theme }) =>
     `repeat(auto-fill, ${theme.sizes.fileManager.gridEntryWidth})`};
   grid-template-rows: ${({ theme }) =>

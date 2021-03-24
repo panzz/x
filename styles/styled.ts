@@ -1,3 +1,4 @@
+/* eslint max-lines: off */
 import 'styled-components';
 
 export type WallpaperEffect = (element: HTMLElement | null) => () => void;
@@ -7,18 +8,30 @@ declare module 'styled-components' {
     colors: {
       background: string;
       fileEntry: {
-        backgroundColor: string;
-        borderColor1: string;
-        borderColor2: string;
-        textColor: string;
+        background: string;
+        border1: string;
+        border2: string;
+        text: string;
         textShadow: string;
       };
       highlight: string;
       startButton: string;
-      taskbar: string;
-      taskbarHover: string;
+      taskbar: {
+        background: string;
+        hover: string;
+      };
       text: string;
-      window: string;
+      titleBar: {
+        background: string;
+        backgroundHover: string;
+        closeHover: string;
+        text: string;
+      };
+      window: {
+        background: string;
+        outline: string;
+        shadow: string;
+      };
     };
     formats: {
       date: Intl.DateTimeFormatOptions;
@@ -37,7 +50,6 @@ declare module 'styled-components' {
         columnGap: string;
         gridEntryHeight: string;
         gridEntryWidth: string;
-        gridFlowDirection: string;
         padding: string;
         rowGap: string;
       };
@@ -57,6 +69,17 @@ declare module 'styled-components' {
           maxWidth: string;
         };
         height: string;
+      };
+      titleBar: {
+        buttonIconWidth: string;
+        buttonWidth: string;
+        fontSize: string;
+        height: string;
+        iconMargin: string;
+        iconSize: string;
+      };
+      window: {
+        outline: string;
       };
     };
     wallpaper?: WallpaperEffect;

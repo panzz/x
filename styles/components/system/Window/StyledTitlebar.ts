@@ -1,25 +1,25 @@
 import styled from 'styled-components';
 
 const StyledTitlebar = styled.header`
-  background-color: #000;
+  background-color: ${({ theme }) => theme.colors.titleBar.background};
   display: flex;
 
   h1 {
-    color: #fff;
+    color: ${({ theme }) => theme.colors.titleBar.text};
     display: flex;
     flex-grow: 1;
-    font-size: 11.5px;
+    font-size: ${({ theme }) => theme.sizes.titleBar.fontSize};
     font-weight: normal;
-    height: 29px;
+    height: ${({ theme }) => theme.sizes.titleBar.height};
 
     figure {
       align-items: center;
       display: flex;
 
       img {
-        height: 16px;
-        margin: 0 8px;
-        width: 16px;
+        height: ${({ theme }) => theme.sizes.titleBar.iconSize};
+        margin: ${({ theme }) => theme.sizes.titleBar.iconMargin};
+        width: ${({ theme }) => theme.sizes.titleBar.iconSize};
       }
     }
   }
@@ -31,20 +31,21 @@ const StyledTitlebar = styled.header`
       display: flex;
       place-content: center;
       place-items: center;
-      width: 45px;
+      width: ${({ theme }) => theme.sizes.titleBar.buttonWidth};
 
       &:hover {
-        background-color: rgb(26, 26, 26);
+        background-color: ${({ theme }) =>
+          theme.colors.titleBar.backgroundHover};
 
         &.close {
-          background-color: rgb(232, 17, 35);
+          background-color: ${({ theme }) => theme.colors.titleBar.closeHover};
           transition: background-color 0.3s ease;
         }
       }
 
       svg {
-        fill: #fff;
-        width: 10px;
+        fill: ${({ theme }) => theme.colors.titleBar.text};
+        width: ${({ theme }) => theme.sizes.titleBar.buttonIconWidth};
       }
     }
   }

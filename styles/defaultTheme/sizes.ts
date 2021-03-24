@@ -11,7 +11,6 @@ const sizes = {
     columnGap: '1px',
     gridEntryHeight: '70px',
     gridEntryWidth: '74px',
-    gridFlowDirection: 'column',
     padding: '5px 0',
     rowGap: '28px'
   },
@@ -31,6 +30,17 @@ const sizes = {
       maxWidth: '161px'
     },
     height: '30px'
+  },
+  titleBar: {
+    buttonIconWidth: '10px',
+    buttonWidth: '45px',
+    fontSize: '11.5px',
+    height: '29px',
+    iconMargin: '0 8px',
+    iconSize: '16px'
+  },
+  window: {
+    outline: '1px'
   }
 };
 

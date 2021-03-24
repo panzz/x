@@ -1,10 +1,10 @@
 const colors = {
   background: '#000',
   fileEntry: {
-    backgroundColor: 'hsla(0, 0%, 50%, 25%)',
-    borderColor1: 'hsla(0, 0%, 25%, 25%)',
-    borderColor2: 'hsla(0, 0%, 70%, 55%)',
-    textColor: '#fff',
+    background: 'hsla(0, 0%, 50%, 25%)',
+    border1: 'hsla(0, 0%, 25%, 25%)',
+    border2: 'hsla(0, 0%, 70%, 55%)',
+    text: '#FFF',
     textShadow: `0 0 1px rgba(0, 0, 0, 75%), 0 0 2px rgba(0, 0, 0, 50%),
       0 0 3px rgba(0, 0, 0, 25%), 0 1px 1px rgba(0, 0, 0, 75%),
       0 1px 2px rgba(0, 0, 0, 50%), 0 1px 3px rgba(0, 0, 0, 25%),
@@ -13,10 +13,22 @@ const colors = {
   },
   highlight: '#76B9ED',
   startButton: '#FFF',
-  taskbar: 'rgba(0, 0, 0, 60%)',
-  taskbarHover: 'hsla(0, 0%, 25%, 70%)',
+  taskbar: {
+    background: 'rgba(0, 0, 0, 60%)',
+    hover: 'hsla(0, 0%, 25%, 70%)'
+  },
   text: 'rgba(255, 255, 255, 80%)',
-  window: '#808080'
+  titleBar: {
+    background: '#000',
+    backgroundHover: 'rgb(26, 26, 26)',
+    closeHover: 'rgb(232, 17, 35)',
+    text: '#fff'
+  },
+  window: {
+    background: '#808080',
+    outline: 'rgba(0, 0, 0, 25%)',
+    shadow: '0 0 20px 0 rgba(0, 0, 0, 50%)'
+  }
 };
 
 export default colors;
