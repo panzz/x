@@ -6,7 +6,7 @@ const StyledFileEntry = styled.li`
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.fileEntry.background};
-    border: ${({ theme }) => `2px solid ${theme.colors.fileEntry.border}`};
+    border: 2px solid transparent;
     padding: 0;
     position: relative;
 
