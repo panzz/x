@@ -29,8 +29,8 @@ const colors = {
   },
   window: {
     background: '#808080',
-    outline: 'rgba(0, 0, 0, 25%)',
-    shadow: '0 0 20px 0 rgba(0, 0, 0, 50%)'
+    outline: 'hsl(0deg 0% 25% / 50%)',
+    shadow: '0 0 12px 0 rgba(0, 0, 0, 50%)'
   }
 };
 
