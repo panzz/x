@@ -1,17 +1,20 @@
 const colors = {
   background: '#000',
   fileEntry: {
-    background: 'hsla(0, 0%, 50%, 25%)',
-    border1: 'hsla(0, 0%, 25%, 25%)',
-    border2: 'hsla(0, 0%, 70%, 55%)',
+    background: `hsl(206deg 77% 70% / 15%)`,
+    border: 'hsl(206deg 77% 100% / 15%)',
     text: '#FFF',
-    textShadow: `0 0 1px rgba(0, 0, 0, 75%), 0 0 2px rgba(0, 0, 0, 50%),
-      0 0 3px rgba(0, 0, 0, 25%), 0 1px 1px rgba(0, 0, 0, 75%),
-      0 1px 2px rgba(0, 0, 0, 50%), 0 1px 3px rgba(0, 0, 0, 25%),
-      0 2px 1px rgba(0, 0, 0, 75%), 0 2px 2px rgba(0, 0, 0, 50%),
-      0 2px 3px rgba(0, 0, 0, 25%)`
+    textShadow: `
+      0 0 1px rgba(0, 0, 0, 75%),
+      0 0 2px rgba(0, 0, 0, 50%),
+
+      0 1px 1px rgba(0, 0, 0, 75%),
+      0 1px 2px rgba(0, 0, 0, 50%),
+
+      0 2px 1px rgba(0, 0, 0, 75%),
+      0 2px 2px rgba(0, 0, 0, 50%)`
   },
-  highlight: '#76B9ED',
+  highlight: 'hsl(206deg 77% 70%)',
   startButton: '#FFF',
   taskbar: {
     background: 'rgba(0, 0, 0, 60%)',

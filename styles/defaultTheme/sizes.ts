@@ -5,7 +5,8 @@ const sizes = {
   },
   fileEntry: {
     fontSize: '11.5px',
-    iconSize: '48px'
+    iconSize: '48px',
+    letterSpacing: '0.25px'
   },
   fileManager: {
     columnGap: '1px',

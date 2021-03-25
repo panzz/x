@@ -9,8 +9,7 @@ declare module 'styled-components' {
       background: string;
       fileEntry: {
         background: string;
-        border1: string;
-        border2: string;
+        border: string;
         text: string;
         textShadow: string;
       };
@@ -45,6 +44,7 @@ declare module 'styled-components' {
       fileEntry: {
         fontSize: string;
         iconSize: string;
+        letterSpacing: string;
       };
       fileManager: {
         columnGap: string;
