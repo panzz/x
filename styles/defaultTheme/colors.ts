@@ -32,7 +32,7 @@ const colors = {
   },
   window: {
     background: '#808080',
-    outline: 'hsl(0deg 0% 25% / 50%)',
+    outline: 'hsl(0deg 0% 25% / 80%)',
     shadow: '0 0 12px 0 rgba(0, 0, 0, 50%)'
   }
 };

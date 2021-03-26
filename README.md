@@ -23,7 +23,6 @@
   - Icons Drag & Snap to Grid
   - Text Truncation (3 Lines)
 - Taskbar
-  - Add space between Start and Task Entries
 - File Manager
   - Drag/Drop Support
 - Right Click Menu
@@ -69,6 +68,11 @@
 # Limitations
 
 - Styling could be more accurate
+  - Taskbar/Hover Color
+  - Titlebar Icon & Text Position/Accuracy
+  - Taskbar Entry Icon & Text Position/Accuracy
+  - Space between Start, Task Entries & Clock
+  - Taskbar Entry Grouping & Resizing (CSS Grid?)
 - Blurring doesn't work in Firefox
 - Inefficent image loading/sizing
 - Need more tests (Cypress)

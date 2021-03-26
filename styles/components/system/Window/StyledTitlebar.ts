@@ -48,7 +48,7 @@ const StyledTitlebar = styled.header`
 
       svg {
         fill: ${({ theme }) => theme.colors.titleBar.text};
-        margin-bottom: 1px;
+        margin-bottom: 2px;
         width: ${({ theme }) => theme.sizes.titleBar.buttonIconWidth};
       }
 
