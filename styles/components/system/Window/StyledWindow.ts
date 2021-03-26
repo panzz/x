@@ -11,6 +11,7 @@ const StyledWindow = styled.section<StyledWindowProps>`
   height: 100%;
   outline: ${({ theme }) =>
     `${theme.sizes.window.outline} solid ${theme.colors.window.outline}`};
+  overflow: hidden;
   position: absolute;
   width: 100%;
 `;

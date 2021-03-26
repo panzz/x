@@ -13,15 +13,23 @@ const StyledTitlebar = styled.header`
     flex-grow: 1;
     font-size: ${({ theme }) => theme.sizes.titleBar.fontSize};
     font-weight: normal;
+    min-width: 0;
 
     figure {
       align-items: center;
       display: flex;
+      min-width: inherit;
 
       img {
         height: ${({ theme }) => theme.sizes.titleBar.iconSize};
         margin: ${({ theme }) => theme.sizes.titleBar.iconMargin};
         width: ${({ theme }) => theme.sizes.titleBar.iconSize};
+      }
+
+      figcaption {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
       }
     }
   }
