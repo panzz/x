@@ -7,6 +7,7 @@ const StyledTaskbarEntry = styled.li`
   display: flex;
   height: 100%;
   max-width: ${({ theme }) => theme.sizes.taskbar.entry.maxWidth};
+  min-width: 26px;
   width: 100%;
 
   figure {
