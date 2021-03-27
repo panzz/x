@@ -1,10 +1,7 @@
 import type { ProcessComponentProps } from 'components/system/Processes/RenderProcess';
+import RndWindow from 'components/system/Window/RndWindow';
 import Titlebar from 'components/system/Window/Titlebar';
 import { useProcesses } from 'contexts/process';
-import { useSession } from 'contexts/session';
-import useRnd from 'hooks/useRnd';
-import { useCallback } from 'react';
-import { Rnd } from 'react-rnd';
 import StyledWindow from 'styles/components/system/Window/StyledWindow';
 
 type WindowProps = ProcessComponentProps & {
@@ -14,30 +11,17 @@ type WindowProps = ProcessComponentProps & {
 const Window = ({ children, id }: WindowProps): JSX.Element => {
   const {
     processes: {
-      [id]: { maximized, minimized }
+      [id]: { minimized }
     }
   } = useProcesses();
-  const { position, size, ...rndProps } = useRnd(id, maximized);
-  const { setWindowStates } = useSession();
-  const onClose = useCallback<React.MouseEventHandler>(
-    () =>
-      setWindowStates((currentWindowStates) => ({
-        ...currentWindowStates,
-        [id]: {
-          position,
-          size
-        }
-      })),
-    [id, position, size, setWindowStates]
-  );
 
   return (
-    <Rnd position={position} size={size} {...rndProps}>
+    <RndWindow id={id}>
       <StyledWindow minimized={minimized}>
-        <Titlebar id={id} onClose={onClose} />
+        <Titlebar id={id} />
         {children}
       </StyledWindow>
-    </Rnd>
+    </RndWindow>
   );
 };
 
