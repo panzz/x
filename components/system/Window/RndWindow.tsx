@@ -22,7 +22,7 @@ const RndWindow = ({ children, id }: RndWindowProps): JSX.Element => {
   useEffect(() => {
     const { current } = rndRef || {};
 
-    return () => {
+    return () =>
       setWindowStates((currentWindowStates) => ({
         ...currentWindowStates,
         [id]: {
@@ -30,7 +30,6 @@ const RndWindow = ({ children, id }: RndWindowProps): JSX.Element => {
           size: current?.props?.size
         }
       }));
-    };
   }, [id, setWindowStates]);
 
   return (
