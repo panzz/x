@@ -4,7 +4,7 @@ const sizes = {
     width: '76px'
   },
   fileEntry: {
-    fontSize: '11.5px',
+    fontSize: '12px',
     iconSize: '48px',
     letterSpacing: '0.25px'
   },
@@ -35,7 +35,7 @@ const sizes = {
   titleBar: {
     buttonIconWidth: '10px',
     buttonWidth: '45px',
-    fontSize: '11.5px',
+    fontSize: '12px',
     height: '30px',
     iconMargin: '0 8px',
     iconSize: '16px'
